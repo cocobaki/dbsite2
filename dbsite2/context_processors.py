@@ -1,4 +1,4 @@
-# dbsite/context_processors.py
+# dbsite2/context_processors.py
 
 from django.db.models import Count, Q
 
