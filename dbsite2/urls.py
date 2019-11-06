@@ -22,6 +22,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+]
+
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('blog/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
