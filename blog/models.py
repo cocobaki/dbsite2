@@ -28,12 +28,15 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
+    content2 = models.TextField(blank=True)
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)
     is_public = models.BooleanField(default=False)
-    image = models.ImageField(
+    image1 = models.ImageField(
+        upload_to='post_images/', null=True, blank=True)
+    image2 = models.ImageField(
         upload_to='post_images/', null=True, blank=True)
 
     class Meta:

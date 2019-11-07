@@ -144,3 +144,52 @@ img {
   text-align: center;
   margin: 10px ;
 }
+
+
+
+.entry-meta li{
+  float: none;
+  display: inline-block;
+  margin: 0;
+  font-size: 10px;
+  padding-right: 12px;
+  line-height: 1.1;
+}
+
+.blog-area{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tit{
+padding: 0px 0px 40px;
+}
+
+.img1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.con1, .con2{
+padding: 40px 90px;
+margin: auto;
+}
+
+.comment-area{
+  padding: 40px 90px;
+  margin: auto;
+}
+
+.user-edit-btn{
+  padding: 0px 0px 40px;
+  }
+
+.user-info{
+  padding: 40px 200px;
+  margin: auto;
+}
+
+.user-save-btn{
+  padding: 40px 0px 0px;
+}

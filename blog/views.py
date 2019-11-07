@@ -189,3 +189,36 @@ class SignUp(CreateView):
         login(self.request, user) # 認証
         self.object = user 
         return HttpResponseRedirect(self.get_success_url()) # リダイレクト
+
+
+
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views import generic
+from django.shortcuts import redirect, resolve_url
+from .forms import (
+    UserUpdateForm
+)
+
+User = get_user_model()
+
+class OnlyYouMixin(UserPassesTestMixin):
+    raise_exception = True
+
+    def test_func(self):
+        user = self.request.user
+        return user.pk == self.kwargs['pk'] or user.is_superuser
+
+
+class UserDetail(OnlyYouMixin, generic.DetailView):
+    model = User
+    template_name = 'registration/user_detail.html'
+
+
+class UserUpdate(OnlyYouMixin, generic.UpdateView):
+    model = User
+    form_class = UserUpdateForm
+    template_name = 'registration/user_update.html'
+
+    def get_success_url(self):
+        return resolve_url('blog:user_detail', pk=self.kwargs['pk'])

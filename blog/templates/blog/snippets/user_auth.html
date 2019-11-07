@@ -1,5 +1,7 @@
 {% if user.is_authenticated %}
-<button class="btn btn-outline-primary my-2 my-sm-0">username:{{ user.get_username }}</button>
+<a href="{% url 'blog:user_detail' user.id %}">
+<button class="btn btn-outline-primary my-2 my-sm-0">ユーザーID:{{ user.get_username }}</button>
+</a>
 <a href="{% url 'logout' %}"><button class="btn btn-outline-primary my-2 my-sm-0">Logout</button></a> 
 {% else %}
 <a href="{% url 'login' %}"><button class="btn btn-outline-primary mr-sm-2">Login</button></a>  

@@ -17,6 +17,8 @@ from blog.views import (
     reply_approve,
     reply_remove,
     SignUp,
+    UserDetail,
+    UserUpdate,
 )
 
 app_name = 'blog'
@@ -36,4 +38,6 @@ urlpatterns = [
     path('reply/<int:pk>/approve/', reply_approve, name='reply_approve'),
     path('reply/<int:pk>/remove/', reply_remove, name='reply_remove'),
     path('signup/', SignUp.as_view(), name='signup'),
+    path('user_detail/<int:pk>/', UserDetail.as_view(), name='user_detail'),
+    path('user_update/<int:pk>/', UserUpdate.as_view(), name='user_update'),
 ]

@@ -4,10 +4,10 @@
 {% if user.is_authenticated or post.is_public %}
 
 <article class="entry">
-  {% if post.image %}
+  {% if post.image1 %}
   <figure>
    <a href="{% url 'blog:post_detail' post.id %}">
-     <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+     <img class="card-img-top" src="{{ post.image1.url }}" alt="{{ post.title }}">
    </a>
   </figure>
   {% endif %}
