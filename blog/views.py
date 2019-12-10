@@ -7,7 +7,7 @@ from django.http import Http404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from blog.models import Post, Category, Tag
+from blog.models import Post, Category, Tag, User
 
 from django.shortcuts import get_object_or_404
 
@@ -222,3 +222,4 @@ class UserUpdate(OnlyYouMixin, generic.UpdateView):
 
     def get_success_url(self):
         return resolve_url('blog:user_detail', pk=self.kwargs['pk'])
+

@@ -87,3 +87,5 @@ class Reply(models.Model):
 
     def __str__(self):
         return self.text
+
+from django.contrib.auth.models import User
