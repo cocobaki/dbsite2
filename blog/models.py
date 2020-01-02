@@ -88,4 +88,15 @@ class Reply(models.Model):
     def __str__(self):
         return self.text
 
+
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractBaseUser
+
+
+from django.contrib.auth.models import AbstractUser
+
+
+class CustomUser(AbstractUser):
+
+    def __str__(self):
+        return self.email

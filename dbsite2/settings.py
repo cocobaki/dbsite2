@@ -69,8 +69,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dbsite2.wsgi.application'
+# カスタムユーザモデル
+AUTH_USER_MODEL = 'blog.CustomUser'
 
+WSGI_APPLICATION = 'dbsite2.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -116,6 +118,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+LOGIN_URL = '/blog/'
 LOGIN_REDIRECT_URL = '/blog/'
 LOGOUT_REDIRECT_URL = '/blog/'
 

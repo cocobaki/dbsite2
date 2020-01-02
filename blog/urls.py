@@ -19,6 +19,7 @@ from blog.views import (
     SignUp,
     UserDetail,
     UserUpdate,
+    LogOut,
 )
 
 app_name = 'blog'
@@ -39,4 +40,5 @@ urlpatterns = [
     path('signup/', SignUp.as_view(), name='signup'),
     path('user_detail/<int:pk>/', UserDetail.as_view(), name='user_detail'),
     path('user_update/<int:pk>/', UserUpdate.as_view(), name='user_update'),
+    path('logout/', LogOut.as_view(), name='logout'),
 ]

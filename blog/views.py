@@ -173,16 +173,16 @@ def reply_remove(request, pk):
 # ログイン関連
 
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 
 
 class SignUp(CreateView):
-    form_class = UserCreationForm
-    template_name = "blog/signup.html" 
-    success_url = reverse_lazy('blog')
+    form_class = CustomUserCreationForm
+    template_name = "registration/signup.html" 
+    success_url = reverse_lazy('blog:index')
 
     def form_valid(self, form):
         user = form.save() # formの情報を保存
@@ -223,3 +223,8 @@ class UserUpdate(OnlyYouMixin, generic.UpdateView):
     def get_success_url(self):
         return resolve_url('blog:user_detail', pk=self.kwargs['pk'])
 
+
+from django.contrib.auth.views import LogoutView
+
+class LogOut(LogoutView):
+    template_name = 'registration/logout.html'
