@@ -25,7 +25,7 @@ SECRET_KEY = 'b33%clpg13f(bgm0b6acnevb)0sz9n(dy_p25bbb4ocoyb-$%l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-3-135-19-26.us-east-2.compute.amazonaws.com', '3.135.19.26']
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'dbsite2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbsite2',
+        'USER': 'aki',
+        'PASSWORD': 'akiakipsql',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -117,10 +121,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-LOGIN_URL = '/blog/'
-LOGIN_REDIRECT_URL = '/blog/'
-LOGOUT_REDIRECT_URL = '/blog/'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -129,10 +132,6 @@ LOGOUT_REDIRECT_URL = '/blog/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media_root')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static_root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
