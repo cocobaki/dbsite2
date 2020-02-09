@@ -2,8 +2,8 @@
 <a href="{% url 'blog:user_detail' user.id %}">
 <button class="btn btn-outline-primary my-2 my-sm-0">ユーザーID:{{ user.get_username }}</button>
 </a>
-<a href="{% url 'logout' %}"><button class="btn btn-outline-primary my-2 my-sm-0">Logout</button></a> 
+<a href="{% url 'logout' %}"><button class="btn btn-outline-primary my-2 my-sm-0">ログアウト</button></a> 
 {% else %}
-<a href="{% url 'login' %}"><button class="btn btn-outline-primary mr-sm-2">Login</button></a>  
-<a href="{% url 'blog:signup' %}"><button class="btn btn-outline-primary mr-sm-2">Signup</button></a> 
+<a href="{% url 'login' %}"><button class="btn btn-outline-primary mr-sm-2">ログイン</button></a>  
+<a href="{% url 'blog:signup' %}"><button class="btn btn-outline-primary mr-sm-2">会員登録</button></a> 
 {% endif %} 
