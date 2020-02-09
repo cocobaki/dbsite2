@@ -1,0 +1,33 @@
+
+<div class="post-loop-wrap">
+{% for post in object_list %}
+{% if user.is_authenticated or post.is_public %}
+
+<article class="entry">
+  {% if post.image1 %}
+  <figure>
+   <a href="{% url 'blog:post_detail' post.id %}">
+     <img class="card-img-top" src="{{ post.image1.url }}" alt="{{ post.title }}">
+   </a>
+  </figure>
+  {% endif %}
+  <header class="post-header">
+      <h2 class="post-title">
+        <a href="{% url 'blog:post_detail' post.id %}">
+          {{ post.title }}
+        </a>
+      </h2>
+  </header>
+  <section>
+    <p class="pub-date">{{ post.published_at|date }}</p>
+  </section>
+    {% if not post.is_public %}  
+      <h6><span class="badge badge-secondary">下書き</span></h6>
+    {% endif %}
+</article>
+
+{% endif %}
+{% empty %}
+<p>まだ投稿はありません。</p>
+{% endfor %}
+</div>

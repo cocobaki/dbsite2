@@ -1,0 +1,53 @@
+<!-- blog/post_detail.html -->
+{% extends "base.html" %}
+
+{% block title %}投稿一覧 | {{ block.super }}{% endblock %}
+{% block description %}マイブログです。毎日更新します。{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="post-row">
+
+        <article class="blog-area">
+            <ul class="entry-meta">
+            <li>
+            {{ object.published_at|date }} 
+            </li>
+            <li>
+            {{ object.category.name }}
+            </li>
+            <li>
+            {% for tag in object.tags.all %}
+            {{ tag.name }}
+            {% endfor %}
+            </li>
+            </ul>
+
+            <h1 class=tit>{{ object.title }}</h1>
+
+            {% if post.image1 %}
+            <img src="{{ post.image1.url }}" width="480" height="252" class="img1">
+            {% endif %}
+
+            <div class="con1">
+            {{ object.content|safe }}
+            </div>
+
+            {% if post.image2 %}
+            <img src="{{ post.image2.url }}" width="240" height="126">
+            {% endif %}
+
+            <div class="con2">
+            {{ object.content2|safe }}
+            </div>
+
+            <div class="comment-area">
+                    <a class="btn btn-primary my-3" href="{% url 'blog:comment_form' post.pk %}">コメントを投稿する</a>
+                    {% include "blog/snippets/comments.html" %}
+            </div>
+            
+        </article>
+
+    </div>
+</div>
+{% endblock %}

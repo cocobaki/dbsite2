@@ -1,0 +1,195 @@
+/* blog/static/blog/css/blog.css */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-loop-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0;
+}
+
+.entry{
+  width: 33.33%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  padding: 0 20px 42px;
+  margin: 0;
+}
+
+.post-loop-wrap .post-header {
+  padding: 12px 0 10px;
+}
+
+.post-loop-wrap .post-title a:hover {
+  color: #0042aa;
+  text-decoration: none;
+}
+
+.post-loop-wrap .post-title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.post-title a {
+  color: #000;
+}
+
+.post-loop-wrap .post-title a:hover {
+  color: #0042aa;
+}
+
+.pub-date {
+  font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+.site-footer {
+  background: #f9f9f9;
+}
+
+.site-footer a {
+  color: #9a9999;
+}
+
+.site-footer a:hover {
+  text-decoration: none;
+}
+
+.site-footer .footer-widget-area {
+  background: none;
+  border: none;
+  width: 1160px;
+  margin: 0 auto;
+}
+
+.site-footer .footer-widget-area ul li {
+  display: block;
+  margin: 4px 0;
+}
+
+.footer-widget-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.site-footer .footer-widget-area .footer-widget {
+  background: #f9f9f9;
+  font-size: 14px;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: none;
+}
+
+.footer-widget {
+  border-top: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.footer-container {
+  padding: 40px 0;
+}
+
+.site-footer .site-info {
+  background: #323232;
+  color: #fff;
+  border: none;
+  max-width: 100%;
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.wrapper{
+  min-height: 100vh;
+}
+
+
+
+
+
+.signup-info{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.signup-button{
+  text-align: center;
+  margin: 10px ;
+}
+
+.login-info{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.login-button{
+  text-align: center;
+  margin: 10px ;
+}
+
+
+
+.entry-meta li{
+  float: none;
+  display: inline-block;
+  margin: 0;
+  font-size: 10px;
+  padding-right: 12px;
+  line-height: 1.1;
+}
+
+.blog-area{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tit{
+padding: 0px 0px 40px;
+}
+
+.img1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.con1, .con2{
+padding: 40px 90px;
+margin: auto;
+}
+
+.comment-area{
+  padding: 40px 90px;
+  margin: auto;
+}
+
+.user-edit-btn{
+  padding: 0px 0px 40px;
+  }
+
+.user-info{
+  padding: 40px 200px;
+  margin: auto;
+}
+
+.user-save-btn{
+  padding: 40px 0px 0px;
+}

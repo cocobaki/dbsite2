@@ -1,0 +1,15 @@
+<!-- blog/category_post.html -->
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }} | {{ block.super }}{% endblock %}
+{% block description %}「{{ category.name }}」の投稿一覧ページです。{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+      <h1 class="mb-4">「{{ category.name }}」の投稿一覧</h1>
+      {% include "blog/snippets/main_post_list.html" %}
+      {% include "blog/snippets/pagination.html" %}
+  </div>
+</div>
+{% endblock %}
